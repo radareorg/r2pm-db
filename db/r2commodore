@@ -1,0 +1,16 @@
+name: r2commodore
+type: git
+repo: https://github.com/thestr4ng3r/r2commodore
+desc: "[asm] CBM Basic Support (C64, VIC-20, PET, ...)"
+
+install: 
+  - mkdir build
+  - pwd
+  - cmake -B build -S . -DCMAKE_INSTALL_PREFIX=~/.local
+  - make -C build -j4
+  - make -C build install
+
+uninstall:
+  - true
+# Doesn't work:  - cat build/install-manifest.txt | xargs rm -v
+
